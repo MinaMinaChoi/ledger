@@ -21,7 +21,11 @@
     "@angular/platform-browser": "^5.2.0",
     "@angular/platform-browser-dynamic": "^5.2.0",
     "@angular/router": "^5.2.0",
+    "@ledgerhq/hw-app-btc": "^4.7.3",
+    "@ledgerhq/hw-transport-u2f": "^4.7.3",
     "core-js": "^2.4.1",
+    "crypto": "^1.0.1",
+    "ethereumjs-wallet": "^0.6.0",
     "rxjs": "^5.5.6",
     "zone.js": "^0.8.19"
   },
