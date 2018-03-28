@@ -1,12 +1,44 @@
-
 <div class="container">
   <h1>Ledger Wallet Test</h1>
 
   <button (click)="connectLedger()">Connect Ledger</button>
   <br>
   <li *ngFor="let addr of ledgerAddrList">
-    {{addr.publicKey}} <br>
-    {{addr.bitcoinAddress}}
+    {{addr.publicKey}}
+    <br> {{addr.bitcoinAddress}}
   </li>
   <br>
 </div>
+
+
+
+
+<div class="container">
+  <h1>ETHER Wallet</h1>
+  <button (click)="createMnemonics()">Get Mnemonics</button>
+  <textarea cols="30" rows="10"> {{ETHMnemonics}}</textarea>
+  <br>
+  <br>
+
+
+  <button (click)="getETHAddrByMBtn()">Get address By Mnenonics</button>
+  <button (click)="getETHAddrByLBtn()">Get address By Ledger</button>
+  <br>
+
+  <h2>Get address By Mnenonics</h2>
+  <li *ngFor="let addr of ETHAddrListByM">
+    {{addr}}
+  </li>
+  <br>
+
+  <h2>Get address By Ledger</h2>
+  <li *ngFor="let addr of ETHAddrListByL">
+    {{addr.address}}
+    {{addr.publicKey}}
+  </li>
+  <br>
+</div>
+
+
+<!-- <h2>Get ETH Address By Private Key</h2>
+<input type="text"> -->
