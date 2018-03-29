@@ -1,4 +1,4 @@
-<div class="container">
+<!-- <div class="container">
   <h1>Ledger Wallet Test</h1>
 
   <button (click)="connectLedger()">Connect Ledger</button>
@@ -8,10 +8,69 @@
     <br> {{addr.bitcoinAddress}}
   </li>
   <br>
-</div>
+</div> -->
+
+<h2>Send ETH</h2>
+<input type="text" class="form-control" [(ngModel)]="privKeyForSendETH" placeholder="Private Key">
+<input type="text" class="form-control" [(ngModel)]="fromAddrForSendETH" placeholder="FromAddress">
+<input type="text" class="form-control" [(ngModel)]="toAddrForSendETH" placeholder="ToAddress">
+<input type="text" class="form-control" [(ngModel)]="amountForSendETH" placeholder="amount">
+<input type="text" class="form-control" [(ngModel)]="GweiForSendETH" placeholder="Gwei">
+<input type="text" class="form-control" [(ngModel)]="gasLimitForSendETH" placeholder="gasLimit">
 
 
+<button (click)="sendBtn()">Send ETH</button>
 
+<br>
+<br>
+<br>
+
+<h2>Send ERC20</h2>
+<input type="text" class="form-control" [(ngModel)]="privKeyForSendERC20" placeholder="Private Key">
+<input type="text" class="form-control" [(ngModel)]="fromAddrForSendERC20" placeholder="FromAddress">
+<input type="text" class="form-control" [(ngModel)]="toAddrForSendERC20" placeholder="ToAddress">
+<input type="text" class="form-control" [(ngModel)]="amountForSendERC20" placeholder="amount">
+<input type="text" class="form-control" [(ngModel)]="GweiForSendERC20" placeholder="Gwei">
+<input type="text" class="form-control" [(ngModel)]="gasLimitForSendERC20" placeholder="gasLimit">
+<input type="text" class="form-control" [(ngModel)]="contractAddrForSendERC20" placeholder="contracAddr">
+
+<button (click)="sendERC20Btn()">Send ERC20</button>
+
+<br>
+<br>
+<br>
+
+
+<h2>Get ETH Balance</h2>
+<input type="text" class="form-control" [(ngModel)]="inputAddrForGetBalance" placeholder="ETH Address">
+<button (click)="getETHBalance()">Get Ether Balance</button>
+<h3>{{ETHBalance}}</h3>
+<br>
+<br>
+<br>
+
+<h2>Get ERC20 Balance</h2>
+<input type="text" class="form-control" [(ngModel)]="inputAddrForGetERC20Balance" placeholder="ETH Address">
+<input type="text" class="form-control" [(ngModel)]="inputContractAddrForGetERC20Balance" placeholder="ERC20 Contract Address">
+<button (click)="getERC20Balance()">Get ERC20 Balance</button>
+<h3>{{ERC20.name}}</h3>
+<h3>{{ERC20.symbol}}</h3>
+<h3>{{ERC20.decimals}}</h3>
+<h3>{{ERC20.balance}}</h3>
+<h3>{{ERC20.adjustedBalance}}</h3>
+<br>
+<br>
+<br>
+<h2>Get Custom ERC20 Token Info</h2>
+<input type="text" class="form-control" [(ngModel)]="customERC20TokenAddr" placeholder="ETH Address">
+<button (click)="getERCCustomTokenInfo()">Get Custom ERC20 Token Info</button>
+<h3>{{customERC20Token.contractAddress}}</h3>
+<h3>{{customERC20Token.decimals}}</h3>
+<h3>{{customERC20Token.name}}</h3>
+<h3>{{customERC20Token.symbol}}</h3>
+<br>
+<br>
+<br>
 
 <div class="container">
   <h1>ETHER Wallet</h1>
@@ -24,21 +83,37 @@
   <button (click)="getETHAddrByMBtn()">Get address By Mnenonics</button>
   <button (click)="getETHAddrByLBtn()">Get address By Ledger</button>
   <br>
-
+  <br>
+  <br>
+  <br>
   <h2>Get address By Mnenonics</h2>
-  <li *ngFor="let addr of ETHAddrListByM">
-    {{addr}}
+  <li *ngFor="let wallet of ETHAddrListByM">
+    <h5> address : {{wallet.address}}
+      <br> privateKey : {{wallet.privKey}}</h5>
   </li>
   <br>
-
+  <br>
+  <br>
+  <br>
   <h2>Get address By Ledger</h2>
-  <li *ngFor="let addr of ETHAddrListByL">
-    {{addr.address}}
-    {{addr.publicKey}}
+  <li *ngFor="let wallet of ETHAddrListByL">
+    <h5>
+      address : {{wallet.address}}
+      <br> publicKey : {{wallet.publicKey}}
+      <br> BIPPath : {{wallet.BIPPath}}
+    </h5>
   </li>
   <br>
 </div>
+<br>
+<br>
+<br>
 
+<h2>Get ETH Address By Private Key</h2>
+<input type="text" class="form-control" [(ngModel)]="inputPrivKey" placeholder="Private Key">
+<button (click)="OpenETHWalletByPrivKey()">Open Ether Wallet</button>
+<h3>{{ETHAddrByPrivKey}}</h3>
 
-<!-- <h2>Get ETH Address By Private Key</h2>
-<input type="text"> -->
+<br>
+<br>
+<br>

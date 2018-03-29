@@ -31,7 +31,7 @@
     "ethereumjs-wallet": "^0.6.0",
     "human-standard-token-abi": "^1.0.2",
     "rxjs": "^5.5.6",
-    "web3": "^1.0.0-beta.33",
+    "web3": "^0.19.0",
     "zone.js": "^0.8.19"
   },
   "devDependencies": {
